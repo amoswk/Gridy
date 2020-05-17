@@ -66,7 +66,13 @@ class EditorViewController: UIViewController {
 //
 //    }
     
-    override func viewDidLayoutSubviews() {
+    override func viewDidAppear(_ animated: Bool) {
+
+        
+ 
+        
+        
+        
         
         // so the blur view window loads on app startup
 
@@ -76,7 +82,14 @@ class EditorViewController: UIViewController {
 
                // for setting the mask in the created view
                setMask(with: squareWindow, in: blurView!)
-
+        
+        
+ // find coordinates of mask, then draw lines
+        
+//Place drawing here - after "setMask"
+        
+        
+        
     }
 
     
