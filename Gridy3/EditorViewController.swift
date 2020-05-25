@@ -9,7 +9,15 @@
 import Foundation
 import UIKit
 
+
+
+
+
+
 class EditorViewController: UIViewController {
+    
+    
+    
     
     
     //Variables for EditorViewController
@@ -18,80 +26,94 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var imageWindow: UIView!
     @IBOutlet weak var imageDisplay: UIImageView!
-    
+    @IBOutlet weak var startButton: UIView!
+    @IBOutlet weak var gridView: UIImageView!
     
     
     
     // FUNCTION for creating the window through the blur
+        
+   func setMask(){
+            
+            
+            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+                self.imageDisplay.isHidden = false
+                let squareWindow = self.blurView.convert(self.imageWindow.frame, to: self.blurView)
+                let mutablePath = CGMutablePath()
+                mutablePath.addRect(self.blurView.bounds)
+                mutablePath.addRect(squareWindow)
+                
+                
+                let mask = CAShapeLayer()
+                mask.path = mutablePath
+                mask.fillRule = CAShapeLayerFillRule.evenOdd
+                
+                
+                self.blurView.layer.mask = mask
+                self.imageDisplay.clipsToBounds = false
+                
+                // code to draw lines
+                let renderer1 = UIGraphicsImageRenderer(size: CGSize(width: 500, height: 500))
+                let img1 = renderer1.image { ctx in
+                    
+                    ctx.cgContext.setStrokeColor(UIColor.red.cgColor)
+                    ctx.cgContext.setLineWidth(3)
+                    
+                    ctx.cgContext.move(to: CGPoint(x: 50, y: 450))
+                    ctx.cgContext.addLine(to: CGPoint(x: 250, y: 50))
+                    ctx.cgContext.addLine(to: CGPoint(x: 450, y: 450))
+                    ctx.cgContext.addLine(to: CGPoint(x: 50, y: 450))
+                    
+                    let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
+                    ctx.cgContext.addRect(rectangle)
+                    ctx.cgContext.drawPath(using: .fillStroke)
+                }
+                
+               let gridView = UIImageView(frame: squareWindow)
+                
+                
+                
+                gridView.backgroundColor = .clear
+                
+                gridView.image = img1
+                
+                self.imageWindow.addSubview(gridView)
+                
+            }
     
-    func setMask(with hole: CGRect, in view: UIView){
-        
-        
-        let mutablePath = CGMutablePath()
-        mutablePath.addRect(view.bounds)
-        mutablePath.addRect(hole)
-        
-        
-        let mask = CAShapeLayer()
-        mask.path = mutablePath
-        mask.fillRule = CAShapeLayerFillRule.evenOdd
-        
-        
-        view.layer.mask = mask
-        
-    }
     
+            
+        }
     
     override func viewDidLoad() {
+        
+        
         super.viewDidLoad()
         
-     imageDisplay.image = selectedImage
-
-    }
-    
-    
-    
-//    override func viewWillAppear(_ animated: Bool) {
-//         super.viewWillAppear(animated)
-//
-////                imageDisplay.image = selectedImage
-////
-////                so the blur view window loads on app startup
-//
-//               let squareWindow = imageWindow.frame.integral
-//
-//               // for setting the mask in the created view
-//               setMask(with: squareWindow, in: blurView!)
-        
-//
-//    }
-    
-    override func viewDidAppear(_ animated: Bool) {
-
-        
- 
         
         
+        startButton.layer.cornerRadius = 15
         
-        
-        // so the blur view window loads on app startup
-
-//        let squareWindow = imageWindow.frame.integral
-        
-        let squareWindow = blurView.convert(imageWindow.frame, to: blurView)
-
-               // for setting the mask in the created view
-               setMask(with: squareWindow, in: blurView!)
-        
-        
- // find coordinates of mask, then draw lines
-        
-//Place drawing here - after "setMask"
-        
-        
+        imageDisplay.image = selectedImage
         
     }
+    
+    
+    
+        override func viewWillAppear(_ animated: Bool) {
+             super.viewWillAppear(animated)
+    
 
+                  
+    
+                   // for setting the mask in the created view
+                   setMask()
+    
+    
+        }
+    
+    
+    
     
     
     
@@ -146,3 +168,4 @@ class EditorViewController: UIViewController {
     }
     
 }
+

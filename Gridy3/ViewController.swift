@@ -19,6 +19,8 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     
     
     
+    
+    
     @IBOutlet weak var challengeLabel: UILabel!
     
     @IBOutlet weak var gridyLabel: UILabel!
@@ -30,7 +32,7 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     @IBOutlet weak var gridyButton: UIButton!
     
     
-    
+
     //
     
     
