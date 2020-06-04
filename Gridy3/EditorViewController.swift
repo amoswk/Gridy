@@ -15,7 +15,8 @@ import UIKit
 
 
 class EditorViewController: UIViewController {
-    
+   
+
     
     
     
@@ -58,15 +59,23 @@ class EditorViewController: UIViewController {
                     
                     ctx.cgContext.setStrokeColor(UIColor.red.cgColor)
                     ctx.cgContext.setLineWidth(3)
+              
                     
-                    ctx.cgContext.move(to: CGPoint(x: 50, y: 450))
-                    ctx.cgContext.addLine(to: CGPoint(x: 250, y: 50))
-                    ctx.cgContext.addLine(to: CGPoint(x: 450, y: 450))
-                    ctx.cgContext.addLine(to: CGPoint(x: 50, y: 450))
+                    ctx.cgContext.move(to: CGPoint(x: 500/3, y: 500/3))
+                    ctx.cgContext.addLine(to: CGPoint(x: 0, y: 500))
+                  
+                   
+                    
+            
                     
                     let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
                     ctx.cgContext.addRect(rectangle)
                     ctx.cgContext.drawPath(using: .fillStroke)
+                    
+                    
+                    
+                    
+                  
                 }
                 
                let gridView = UIImageView(frame: squareWindow)
