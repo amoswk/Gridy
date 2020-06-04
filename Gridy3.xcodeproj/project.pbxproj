@@ -18,6 +18,7 @@
 		B03EABB72471B6CE00FD52D7 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = B03EABB62471B6CE00FD52D7 /* Assets.xcassets */; };
 		B03EABBB2471B72800FD52D7 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B03EABB92471B72800FD52D7 /* timeburnernormal.ttf */; };
 		B03EABBC2471B72800FD52D7 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */; };
+		B0C7EBAF2488BBE40088C81F /* GridDraw.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0C7EBAE2488BBE40088C81F /* GridDraw.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -55,6 +56,7 @@
 		B03EABB62471B6CE00FD52D7 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		B03EABB92471B72800FD52D7 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
+		B0C7EBAE2488BBE40088C81F /* GridDraw.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GridDraw.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -109,6 +111,7 @@
 				B03EAB802471B58C00FD52D7 /* AppDelegate.swift */,
 				B03EABB02471B66200FD52D7 /* ViewController.swift */,
 				B03EABB22471B68500FD52D7 /* EditorViewController.swift */,
+				B0C7EBAE2488BBE40088C81F /* GridDraw.swift */,
 				B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */,
 				B03EABB62471B6CE00FD52D7 /* Assets.xcassets */,
 				B03EABB42471B6BC00FD52D7 /* Main.storyboard */,
@@ -280,6 +283,7 @@
 			files = (
 				B03EABB12471B66200FD52D7 /* ViewController.swift in Sources */,
 				B03EAB812471B58C00FD52D7 /* AppDelegate.swift in Sources */,
+				B0C7EBAF2488BBE40088C81F /* GridDraw.swift in Sources */,
 				B03EAB832471B58C00FD52D7 /* SceneDelegate.swift in Sources */,
 				B03EABB32471B68500FD52D7 /* EditorViewController.swift in Sources */,
 			);

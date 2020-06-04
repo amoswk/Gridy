@@ -54,6 +54,11 @@ class EditorViewController: UIViewController {
                 self.imageDisplay.clipsToBounds = false
                 
                 // code to draw lines
+              
+                
+
+                
+                
                 let renderer1 = UIGraphicsImageRenderer(size: CGSize(width: 500, height: 500))
                 let img1 = renderer1.image { ctx in
                     
@@ -94,6 +99,10 @@ class EditorViewController: UIViewController {
             
         }
     
+    
+    
+    
+    
     override func viewDidLoad() {
         
         
@@ -120,8 +129,6 @@ class EditorViewController: UIViewController {
     
     
         }
-    
-    
     
     
     
