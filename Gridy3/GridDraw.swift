@@ -12,23 +12,24 @@ import UIKit
 class GridView: UIView
 {
     var path = UIBezierPath()
-    var gridWidthMultiple: CGFloat
+    var gridWidthLines: CGFloat
+    
     {
         return 3
     }
-   var gridHeightMultiple : CGFloat
+   var gridHeightLines: CGFloat
     {
         return 3
     }
 
    var gridWidth: CGFloat
     {
-        return bounds.width/CGFloat(gridWidthMultiple)
+        return bounds.width/CGFloat(gridWidthLines)
     }
 
    var gridHeight: CGFloat
     {
-        return bounds.height/CGFloat(gridHeightMultiple)
+        return bounds.height/CGFloat(gridHeightLines)
     }
 
     var gridCenter: CGPoint {
@@ -40,7 +41,7 @@ class GridView: UIView
         path = UIBezierPath()
         path.lineWidth = 5.0
 
-        for index in 1...Int(gridWidthMultiple) - 1
+        for index in 1...Int(gridWidthLines) - 1
         {
             let start = CGPoint(x: CGFloat(index) * gridWidth, y: 0)
             let end = CGPoint(x: CGFloat(index) * gridWidth, y:bounds.height)
@@ -56,7 +57,6 @@ class GridView: UIView
     {
         drawGrid()
 
-        // Specify a border (stroke) color.
         UIColor.blue.setStroke()
         path.stroke()
     }

@@ -60,22 +60,60 @@ class EditorViewController: UIViewController {
                 
                 
                 let renderer1 = UIGraphicsImageRenderer(size: CGSize(width: 500, height: 500))
-                let img1 = renderer1.image { ctx in
-                    
-                    ctx.cgContext.setStrokeColor(UIColor.red.cgColor)
-                    ctx.cgContext.setLineWidth(3)
-              
-                    
-                    ctx.cgContext.move(to: CGPoint(x: 500/3, y: 500/3))
-                    ctx.cgContext.addLine(to: CGPoint(x: 0, y: 500))
+                let img1 = renderer1.image
+                
+                var path = UIBezierPath()
+                  var gridWidthLines: CGFloat
                   
-                   
-                    
-            
-                    
-                    let rectangle = CGRect(x: 0, y: 0, width: 512, height: 512)
-                    ctx.cgContext.addRect(rectangle)
-                    ctx.cgContext.drawPath(using: .fillStroke)
+                  {
+                      return 3
+                  }
+                 var gridHeightLines: CGFloat
+                  {
+                      return 3
+                  }
+
+                 var gridWidth: CGFloat
+                  {
+                      return bounds.width/CGFloat(gridWidthLines)
+                  }
+
+                 var gridHeight: CGFloat
+                  {
+                      return bounds.height/CGFloat(gridHeightLines)
+                  }
+
+                  var gridCenter: CGPoint {
+                      return CGPoint(x: bounds.midX, y: bounds.midY)
+                  }
+
+                  func drawGrid()
+                  {
+                      path = UIBezierPath()
+                      path.lineWidth = 5.0
+
+                      for index in 1...Int(gridWidthLines) - 1
+                      {
+                          let start = CGPoint(x: CGFloat(index) * gridWidth, y: 0)
+                          let end = CGPoint(x: CGFloat(index) * gridWidth, y:bounds.height)
+                        let start2 = CGPoint(x: CGFloat(index) * gridHeight, y: 0)
+                        let end2 = CGPoint(x: CGFloat(index) * gridHeight, y:bounds.width)
+                          path.move(to: start)
+                          path.addLine(to: end)
+                      }
+                      //Close the path.
+                      path.close()
+
+                  }
+
+                  override func draw(_ rect: CGRect)
+                  {
+                      drawGrid()
+
+                      UIColor.blue.setStroke()
+                      path.stroke()
+                  }
+                
                     
                     
                     
@@ -85,9 +123,10 @@ class EditorViewController: UIViewController {
                 
                let gridView = UIImageView(frame: squareWindow)
                 
+                self.gridView.frame.origin.y = 500
                 
-                
-                gridView.backgroundColor = .clear
+                self.gridView.backgroundColor = .clear
+    
                 
                 gridView.image = img1
                 
