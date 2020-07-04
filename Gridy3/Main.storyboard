@@ -290,6 +290,7 @@
                     <navigationItem key="navigationItem" id="Uwg-80-pF1"/>
                     <connections>
                         <outlet property="blurView" destination="XbX-ro-veb" id="WYj-jz-8ln"/>
+                        <outlet property="gridView" destination="CX8-0v-psD" id="gpc-1P-oUr"/>
                         <outlet property="imageDisplay" destination="CX8-0v-psD" id="3DJ-OV-0Gf"/>
                         <outlet property="imageWindow" destination="zNX-VP-Tzh" id="7t5-lE-neI"/>
                         <outlet property="startButton" destination="gxo-QV-os7" id="TBr-zh-2Pq"/>
