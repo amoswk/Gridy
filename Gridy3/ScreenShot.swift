@@ -14,21 +14,21 @@ class ScreenShot: UIViewController {
     
     
     
-//
+
 //   func captureScreen() -> UIImage
 //    {
 //
-////        UIGraphicsBeginImageContextWithOptions(.bounds.size, false, 0);
+//        UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
 //
-////        self.view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
-////
-////        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
+//        self.view.drawViewHierarchyInRect(view.bounds, afterScreenUpdates: true)
+//
+//        let image: UIImage = UIGraphicsGetImageFromCurrentImageContext()
 //
 //        UIGraphicsEndImageContext()
-////
-////        return image
-//    }
 //
+//        return image
+//    }
+
     
     
     

@@ -36,10 +36,14 @@ class ViewController: UIViewController, UIImagePickerControllerDelegate, UINavig
     //
     
     
+    
+ 
+        
+    
     override func viewDidLoad() {
         
         
-        
+       
         
         
         
