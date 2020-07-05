@@ -7,6 +7,7 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		B0188B6624B23FCB005AF449 /* ScreenShot.swift in Sources */ = {isa = PBXBuildFile; fileRef = B0188B6524B23FCB005AF449 /* ScreenShot.swift */; };
 		B03EAB812471B58C00FD52D7 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03EAB802471B58C00FD52D7 /* AppDelegate.swift */; };
 		B03EAB832471B58C00FD52D7 /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */; };
 		B03EAB8D2471B58D00FD52D7 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = B03EAB8B2471B58D00FD52D7 /* LaunchScreen.storyboard */; };
@@ -39,6 +40,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
+		B0188B6524B23FCB005AF449 /* ScreenShot.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShot.swift; sourceTree = "<group>"; };
 		B03EAB7D2471B58C00FD52D7 /* Gridy3.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Gridy3.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		B03EAB802471B58C00FD52D7 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -113,6 +115,7 @@
 				B03EABB22471B68500FD52D7 /* EditorViewController.swift */,
 				B0C7EBAE2488BBE40088C81F /* GridDraw.swift */,
 				B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */,
+				B0188B6524B23FCB005AF449 /* ScreenShot.swift */,
 				B03EABB62471B6CE00FD52D7 /* Assets.xcassets */,
 				B03EABB42471B6BC00FD52D7 /* Main.storyboard */,
 				B03EAB8B2471B58D00FD52D7 /* LaunchScreen.storyboard */,
@@ -282,6 +285,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				B03EABB12471B66200FD52D7 /* ViewController.swift in Sources */,
+				B0188B6624B23FCB005AF449 /* ScreenShot.swift in Sources */,
 				B03EAB812471B58C00FD52D7 /* AppDelegate.swift in Sources */,
 				B0C7EBAF2488BBE40088C81F /* GridDraw.swift in Sources */,
 				B03EAB832471B58C00FD52D7 /* SceneDelegate.swift in Sources */,

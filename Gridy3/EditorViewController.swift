@@ -57,23 +57,24 @@ class EditorViewController: UIViewController {
               
                 
 
-                    
-
     
             
         }
-    override func draw(_ rect: CGRect)
+    }
+    
+    
+  func draw(_ rect: CGRect)
     {
         
         var bezierPath = UIBezierPath()
         bezierPath.lineWidth = 5.0
         for index in 1...3 {
             
-            let start = CGPoint(x: CGFloat(index) * self.bounds.width/4, y: 0)
-            let end = CGPoint(x: CGFloat(index) * self.bounds.width/4, y: self.bounds.height)
+            let start = CGPoint(x: CGFloat(index) * imageWindow.bounds.width/4, y: 0)
+            let end = CGPoint(x: CGFloat(index) * imageWindow.bounds.width/4, y: imageWindow.bounds.height)
             
-            let start2 = CGPoint(x: 0, y: CGFloat(index) * self.bounds.height/4)
-            let end2 = CGPoint(x: self.bounds.width, y: CGFloat(index) * self.bounds.height/4)
+            let start2 = CGPoint(x: 0, y: CGFloat(index) * imageWindow.bounds.height/4)
+            let end2 = CGPoint(x: imageWindow.bounds.width, y: CGFloat(index) * imageWindow.bounds.height/4)
             
             
             bezierPath.move(to: start)
@@ -97,7 +98,7 @@ class EditorViewController: UIViewController {
     
     
     
-  func viewDidLoad() {
+  override func viewDidLoad() {
         
         
         super.viewDidLoad()
@@ -112,7 +113,7 @@ class EditorViewController: UIViewController {
     
     
     
-    func viewWillAppear(_ animated: Bool) {
+   override func viewWillAppear(_ animated: Bool) {
              super.viewWillAppear(animated)
     
 
@@ -180,4 +181,4 @@ class EditorViewController: UIViewController {
 
 
 }
-}
+
