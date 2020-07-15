@@ -68,16 +68,22 @@ class EditorViewController: UIViewController {
     
     // Capture screenshot of image
     
+    
+    
     func captureScreen(onView: UIView) -> UIImage?
     {
         
-        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0);
+        UIGraphicsBeginImageContextWithOptions(self.imageWindow.bounds.size, false, 0);
         
         self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
         
         if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
             
             UIGraphicsEndImageContext()
+            
+            //perform segue
+            
+             performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
             
             return image
@@ -91,8 +97,9 @@ class EditorViewController: UIViewController {
     }
     
     
+  
     
-    
+
     
     override func viewDidLoad() {
         
@@ -108,6 +115,16 @@ class EditorViewController: UIViewController {
         startButton.layer.cornerRadius = 15
         
         imageDisplay.image = selectedImage
+        
+        
+        // segue identifier
+        
+        if segue.identifier == "showPuzzleView" {
+            guard let puzzleVC = segue.destination as? PuzzleView else {
+                return
+            }
+        
+        }
         
     }
     
