@@ -253,11 +253,6 @@
                                                 <constraint firstAttribute="trailing" secondItem="hps-fb-HbD" secondAttribute="trailing" constant="38" id="wHw-YX-kTU"/>
                                             </constraints>
                                         </view>
-                                        <view contentMode="scaleToFill" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="ZVQ-BK-hPv">
-                                            <rect key="frame" x="40" y="35" width="240" height="128"/>
-                                            <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
-                                            <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
-                                        </view>
                                     </subviews>
                                     <constraints>
                                         <constraint firstItem="zNX-VP-Tzh" firstAttribute="centerY" secondItem="QLX-Ep-zJ9" secondAttribute="centerY" id="2bp-8G-b9i"/>

@@ -13,7 +13,7 @@ class GridView: UIView {
     override func draw(_ rect: CGRect)
     {
         
-        var bezierPath = UIBezierPath()
+        let bezierPath = UIBezierPath()
         bezierPath.lineWidth = 5.0
         for index in 1...3 {
             
@@ -34,7 +34,7 @@ class GridView: UIView {
         bezierPath.close()
         
         
-        UIColor.red.setStroke()
+        UIColor.black.setStroke()
         
         
         bezierPath.stroke()

@@ -15,8 +15,8 @@ import UIKit
 
 
 class EditorViewController: UIViewController {
-   
-
+    
+    
     
     
     
@@ -30,35 +30,35 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var startButton: UIView!
     @IBOutlet weak var gridView: UIImageView!
     
-
-        
+    
+    
     
     // FUNCTION for creating the window through the blur
-        
-   func setMask(){
-            
-            
-            DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
-                self.imageDisplay.isHidden = false
-                let squareWindow = self.blurView.convert(self.imageWindow.frame, to: self.blurView)
-                let mutablePath = CGMutablePath()
-                mutablePath.addRect(self.blurView.bounds)
-                mutablePath.addRect(squareWindow)
-                
-                
-                let mask = CAShapeLayer()
-                mask.path = mutablePath
-                mask.fillRule = CAShapeLayerFillRule.evenOdd
-                
-                
-                self.blurView.layer.mask = mask
-                self.imageDisplay.clipsToBounds = false
-                
-                // code to draw lines
-              
-                
-
     
+    func setMask(){
+        
+        
+        DispatchQueue.main.asyncAfter(deadline: .now() + 0.2) {
+            self.imageDisplay.isHidden = false
+            let squareWindow = self.blurView.convert(self.imageWindow.frame, to: self.blurView)
+            let mutablePath = CGMutablePath()
+            mutablePath.addRect(self.blurView.bounds)
+            mutablePath.addRect(squareWindow)
+            
+            
+            let mask = CAShapeLayer()
+            mask.path = mutablePath
+            mask.fillRule = CAShapeLayerFillRule.evenOdd
+            
+            
+            self.blurView.layer.mask = mask
+            self.imageDisplay.clipsToBounds = false
+            
+            // code to draw lines
+            
+            
+            
+            
             
         }
     }
@@ -69,18 +69,18 @@ class EditorViewController: UIViewController {
     // Capture screenshot of image
     
     func captureScreen(onView: UIView) -> UIImage?
-       {
-
-        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0);
-
-        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
-
-        if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-
-           UIGraphicsEndImageContext()
-
+    {
         
-           return image
+        UIGraphicsBeginImageContextWithOptions(self.view.bounds.size, false, 0);
+        
+        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
+        
+        if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+            
+            UIGraphicsEndImageContext()
+            
+            
+            return image
             
         }
         
@@ -88,17 +88,17 @@ class EditorViewController: UIViewController {
         return nil
         
         
-       }
-
+    }
     
     
     
     
-  override func viewDidLoad() {
     
-    let grid = GridView(frame: self.view.frame)
-          grid.backgroundColor = UIColor.clear
-          self.view.addSubview(grid)
+    override func viewDidLoad() {
+        
+        let grid = GridView(frame: self.imageWindow.frame)
+        grid.backgroundColor = UIColor.clear
+        self.view.addSubview(grid)
         
         
         super.viewDidLoad()
@@ -113,17 +113,17 @@ class EditorViewController: UIViewController {
     
     
     
-   override func viewWillAppear(_ animated: Bool) {
-             super.viewWillAppear(animated)
-    
-
-                  
-    
-                   // for setting the mask in the created view
-                   setMask()
-    
-    
-        }
+    override func viewWillAppear(_ animated: Bool) {
+        super.viewWillAppear(animated)
+        
+        
+        
+        
+        // for setting the mask in the created view
+        setMask()
+        
+        
+    }
     
     
     
@@ -178,7 +178,7 @@ class EditorViewController: UIViewController {
         }
     }
     
-
-
+    
+    
 }
 
