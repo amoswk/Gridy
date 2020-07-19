@@ -119,12 +119,12 @@ class EditorViewController: UIViewController {
         
         // segue identifier
         
-        if segue.identifier == "showPuzzleView" {
-            guard let puzzleVC = segue.destination as? PuzzleView else {
-                return
-            }
-        
-        }
+//        if segue.identifier == "showPuzzleView" {
+//            guard let puzzleVC = segue.destination as? PuzzleView else {
+//                return
+//            }
+//            puzzleVC.
+//        }
         
     }
     

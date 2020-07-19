@@ -11,7 +11,12 @@ import UIKit
 
 class PuzzleView: UIViewController {
     
-    <#code#>
+    func startButton() {
+    
+    
+    
+    
+    }
     
     
     
