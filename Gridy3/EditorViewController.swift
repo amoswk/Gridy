@@ -22,6 +22,7 @@ class EditorViewController: UIViewController {
     
     
     //Variables for EditorViewController
+    var grid: GridView?
     var selectedImage: UIImage?
     var initialCenter = CGPoint()
     @IBOutlet weak var blurView: UIVisualEffectView!
@@ -56,8 +57,11 @@ class EditorViewController: UIViewController {
             
             // code to draw lines
             
-            
-            
+            self.grid = GridView(frame: self.imageWindow.frame)
+            self.grid?.backgroundColor = UIColor.clear
+            if let grid = self.grid {
+                self.view.addSubview(grid)
+            }
             
             
         }
@@ -103,9 +107,7 @@ class EditorViewController: UIViewController {
     
     override func viewDidLoad() {
         
-        let grid = GridView(frame: self.imageWindow.frame)
-        grid.backgroundColor = UIColor.clear
-        self.view.addSubview(grid)
+      
         
         
         super.viewDidLoad()
@@ -117,15 +119,22 @@ class EditorViewController: UIViewController {
         imageDisplay.image = selectedImage
         
         
-        // segue identifier
         
-//        if segue.identifier == "showPuzzleView" {
-//            guard let puzzleVC = segue.destination as? PuzzleView else {
-//                return
-//            }
-//            puzzleVC.
-//        }
+   
         
+    }
+    
+    
+    
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        
+    if segue.identifier == "showPuzzleView" {
+        
+             guard let puzzleVC = segue.destination as? PuzzleView else {
+                 return
+             }
+             puzzleVC
+         }
     }
     
     
@@ -196,6 +205,25 @@ class EditorViewController: UIViewController {
     }
     
     
+    @IBAction func startButtonPressed(_ sender: Any) {
+        self.grid?.removeFromSuperview()
+        
+        //call screenshot function
+        
+        
+        //cut picture
+        
+        
+        //store image array
+        
+        
+        //pass image array to next view controller
+        
+
+        
+        //call segue (last)
+        
+    }
     
 }
 
