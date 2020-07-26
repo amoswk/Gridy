@@ -31,6 +31,28 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var startButton: UIView!
     @IBOutlet weak var gridView: UIImageView!
     
+ // FUNCTION to Cut Images
+    func cropImage(_ inputImage: UIImage, toRect cropRect: CGRect, viewWidth: CGFloat, viewHeight: CGFloat) -> UIImage?
+    {
+        let imageViewScale = max(selectedImage.size.width / viewWidth,
+                                 selectedImage.size.height / viewHeight)
+
+        // Scale cropRect to handle images larger than shown-on-screen size
+        let cropZone = CGRect(x:cropRect.origin.x * imageViewScale,
+                              y:cropRect.origin.y * imageViewScale,
+                              width:cropRect.size.width * imageViewScale,
+                              height:cropRect.size.height * imageViewScale)
+
+        // Perform cropping in Core Graphics
+        guard let cutImageRef: CGImage = inputImage.cgImage?.cropping(to:cropZone)
+        else {
+            return nil
+        }
+
+        // Return image to UIImage
+        let croppedImage: UIImage = UIImage(cgImage: cutImageRef)
+        return croppedImage
+    }
     
     
     
@@ -209,14 +231,17 @@ class EditorViewController: UIViewController {
         self.grid?.removeFromSuperview()
         
         //call screenshot function
-        
+        captureScreen(onView: imageWindow)
         
         //cut picture
         
+        cropImage(<#T##inputImage: UIImage##UIImage#>, toRect: <#T##CGRect#>, viewWidth: <#T##CGFloat#>, viewHeight: <#T##CGFloat#>)
         
         //store image array
+        var storedImage: [String] = []
         
         
+    
         //pass image array to next view controller
         
 
