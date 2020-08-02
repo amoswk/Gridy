@@ -25,7 +25,7 @@ class EditorViewController: UIViewController {
     var grid: GridView?
     var selectedImage: UIImage?
     var initialCenter = CGPoint()
-    var croppedImage2: UIImage?
+    var capturedImage: UIImage?
     var storedImage: [UIImage] = []
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var imageWindow: UIView!
@@ -36,7 +36,7 @@ class EditorViewController: UIViewController {
  // FUNCTION to Cut Images
     
     
-    func slice(image: UIImage, into howMany: Int) -> [UIImage] {
+    func imageSlice(image: UIImage, into howManyPieces: Int) -> [UIImage] {
         let width: CGFloat
         let height: CGFloat
 
@@ -49,8 +49,8 @@ class EditorViewController: UIViewController {
             height = image.size.height
         }
 
-        let tileWidth = Int(width / CGFloat(howMany))
-        let tileHeight = Int(height / CGFloat(howMany))
+        let tileWidth = Int(width / CGFloat(howManyPieces))
+        let tileHeight = Int(height / CGFloat(howManyPieces))
 
         let scale = Int(image.scale)
         var images = [UIImage]()
@@ -59,14 +59,14 @@ class EditorViewController: UIViewController {
         var adjustedHeight = tileHeight
 
         var y = 0
-        for row in 0 ..< howMany {
-            if row == (howMany - 1) {
+        for row in 0 ..< howManyPieces {
+            if row == (howManyPieces - 1) {
                 adjustedHeight = Int(height) - y
             }
             var adjustedWidth = tileWidth
             var x = 0
-            for column in 0 ..< howMany {
-                if column == (howMany - 1) {
+            for column in 0 ..< howManyPieces {
+                if column == (howManyPieces - 1) {
                     adjustedWidth = Int(width) - x
                 }
                 let origin = CGPoint(x: x * scale, y: y * scale)
@@ -172,7 +172,7 @@ class EditorViewController: UIViewController {
              performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
             
-            return storedImage
+            return image
             
         }
         
@@ -287,13 +287,26 @@ class EditorViewController: UIViewController {
     }
     
     
+    
+    
+    
+    
+    
+    
     @IBAction func startButtonPressed(_ sender: Any) {
         self.grid?.removeFromSuperview()
         
-        //call screenshot function
+        //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
         captureScreen(onView: imageWindow)
         
         //cut picture - find a display mode to show it was cropped correctly
+        
+    
+        if let storedImage = capturedImage?.imageSlice(into: 16) {
+            self.storedImage = storedImage
+            
+            }
+        
         
 //        cropImage(<#T##inputImage: UIImage##UIImage#>, toRect: <#T##CGRect#>, viewWidth: <#T##CGFloat#>, viewHeight: <#T##CGFloat#>)
       

@@ -21,6 +21,7 @@
 		B03EABBB2471B72800FD52D7 /* timeburnernormal.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B03EABB92471B72800FD52D7 /* timeburnernormal.ttf */; };
 		B03EABBC2471B72800FD52D7 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */; };
 		B04B33CD24BEBA0200CDEB94 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B33CC24BEBA0200CDEB94 /* PuzzleView.swift */; };
+		B04B33CF24D73B3500CDEB94 /* UIImage+ImageSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -61,6 +62,7 @@
 		B03EABB92471B72800FD52D7 /* timeburnernormal.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnernormal.ttf; sourceTree = "<group>"; };
 		B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		B04B33CC24BEBA0200CDEB94 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
+		B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageSlice.swift"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -115,6 +117,7 @@
 				B03EAB802471B58C00FD52D7 /* AppDelegate.swift */,
 				B03EABB02471B66200FD52D7 /* ViewController.swift */,
 				B03EABB22471B68500FD52D7 /* EditorViewController.swift */,
+				B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */,
 				B0188B6724B25BA6005AF449 /* GridView.swift */,
 				B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */,
 				B0188B6524B23FCB005AF449 /* ScreenShot.swift */,
@@ -289,6 +292,7 @@
 			files = (
 				B03EABB12471B66200FD52D7 /* ViewController.swift in Sources */,
 				B0188B6624B23FCB005AF449 /* ScreenShot.swift in Sources */,
+				B04B33CF24D73B3500CDEB94 /* UIImage+ImageSlice.swift in Sources */,
 				B03EAB812471B58C00FD52D7 /* AppDelegate.swift in Sources */,
 				B04B33CD24BEBA0200CDEB94 /* PuzzleView.swift in Sources */,
 				B03EAB832471B58C00FD52D7 /* SceneDelegate.swift in Sources */,
