@@ -25,6 +25,8 @@ class EditorViewController: UIViewController {
     var grid: GridView?
     var selectedImage: UIImage?
     var initialCenter = CGPoint()
+    var croppedImage2: UIImage?
+    var storedImage: [UIImage] = []
     @IBOutlet weak var blurView: UIVisualEffectView!
     @IBOutlet weak var imageWindow: UIView!
     @IBOutlet weak var imageDisplay: UIImageView!
@@ -32,27 +34,85 @@ class EditorViewController: UIViewController {
     @IBOutlet weak var gridView: UIImageView!
     
  // FUNCTION to Cut Images
-    func cropImage(_ inputImage: UIImage, toRect cropRect: CGRect, viewWidth: CGFloat, viewHeight: CGFloat) -> UIImage?
-    {
-        let imageViewScale = max(selectedImage.size.width / viewWidth,
-                                 selectedImage.size.height / viewHeight)
+    
+    
+    func slice(image: UIImage, into howMany: Int) -> [UIImage] {
+        let width: CGFloat
+        let height: CGFloat
 
-        // Scale cropRect to handle images larger than shown-on-screen size
-        let cropZone = CGRect(x:cropRect.origin.x * imageViewScale,
-                              y:cropRect.origin.y * imageViewScale,
-                              width:cropRect.size.width * imageViewScale,
-                              height:cropRect.size.height * imageViewScale)
-
-        // Perform cropping in Core Graphics
-        guard let cutImageRef: CGImage = inputImage.cgImage?.cropping(to:cropZone)
-        else {
-            return nil
+        switch image.imageOrientation {
+        case .left, .leftMirrored, .right, .rightMirrored:
+            width = image.size.height
+            height = image.size.width
+        default:
+            width = image.size.width
+            height = image.size.height
         }
 
-        // Return image to UIImage
-        let croppedImage: UIImage = UIImage(cgImage: cutImageRef)
-        return croppedImage
+        let tileWidth = Int(width / CGFloat(howMany))
+        let tileHeight = Int(height / CGFloat(howMany))
+
+        let scale = Int(image.scale)
+        var images = [UIImage]()
+        let cgImage = image.cgImage!
+
+        var adjustedHeight = tileHeight
+
+        var y = 0
+        for row in 0 ..< howMany {
+            if row == (howMany - 1) {
+                adjustedHeight = Int(height) - y
+            }
+            var adjustedWidth = tileWidth
+            var x = 0
+            for column in 0 ..< howMany {
+                if column == (howMany - 1) {
+                    adjustedWidth = Int(width) - x
+                }
+                let origin = CGPoint(x: x * scale, y: y * scale)
+                let size = CGSize(width: adjustedWidth * scale, height: adjustedHeight * scale)
+                let tileCgImage = cgImage.cropping(to: CGRect(origin: origin, size: size))!
+                images.append(UIImage(cgImage: tileCgImage, scale: image.scale, orientation: image.imageOrientation))
+                x += tileWidth
+            }
+            y += tileHeight
+        }
+        return images
     }
+    
+//    func cropImage(_ inputImage: UIImage, toRect cropRect: CGRect, viewWidth: CGFloat, viewHeight: CGFloat) -> UIImage?
+//    {
+////        if let selectedImage = self.selectedImage {
+////            var imageViewScale =  max(selectedImage.size.width / viewWidth,
+////                                           selectedImage.size.height / viewHeight)
+////        }
+////
+////        else {
+////            return nil
+////        }
+//
+//        let imageViewScale = max(inputImage.size.width / viewWidth,
+//        inputImage.size.height / viewHeight)
+//
+//        // Scale cropRect to handle images larger than shown-on-screen size
+//        let cropZone = CGRect(x:cropRect.origin.x * imageViewScale,
+//                              y:cropRect.origin.y * imageViewScale,
+//                              width:cropRect.size.width * imageViewScale,
+//                              height:cropRect.size.height * imageViewScale)
+//
+//        // Perform cropping in Core Graphics
+//        guard let cutImageRef: CGImage = inputImage.cgImage?.cropping(to:cropZone)
+//        else {
+//            return nil
+//        }
+//
+//        // Return image to UIImage
+//        let croppedImage: UIImage = UIImage(cgImage: cutImageRef)
+//
+//
+//
+//        return croppedImage
+//    }
     
     
     
@@ -112,7 +172,7 @@ class EditorViewController: UIViewController {
              performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
             
-            return image
+            return storedImage
             
         }
         
@@ -233,12 +293,13 @@ class EditorViewController: UIViewController {
         //call screenshot function
         captureScreen(onView: imageWindow)
         
-        //cut picture
+        //cut picture - find a display mode to show it was cropped correctly
         
-        cropImage(<#T##inputImage: UIImage##UIImage#>, toRect: <#T##CGRect#>, viewWidth: <#T##CGFloat#>, viewHeight: <#T##CGFloat#>)
+//        cropImage(<#T##inputImage: UIImage##UIImage#>, toRect: <#T##CGRect#>, viewWidth: <#T##CGFloat#>, viewHeight: <#T##CGFloat#>)
+      
         
         //store image array
-        var storedImage: [String] = []
+    
         
         
     
