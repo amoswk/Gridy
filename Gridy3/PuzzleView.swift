@@ -13,19 +13,39 @@ class PuzzleView: UIViewController {
     //Variables for PuzzleView
     
     
-    @IBOutlet weak var gameImage: UIImageView!
     
-    self.gameImage = storedImage
+    @IBOutlet weak var gameImageView: UIImageView!
+    var gameImage: UIImage?
     
-    func startButton() {
+    // self.gameImage = storedImage
+    
+ 
     
     
     
     
+    
+    @IBAction func startGame(_ sender: Any) {
+        
+        
+        
+        
+        
+        
+     }
+    
+    
+    
+        override func viewDidLoad() {
+            super.viewDidLoad()
+            
+            gameImageView.image = gameImage
+            
+            
+            
+            
+            
     }
-    
-    
-    
     
     
 }

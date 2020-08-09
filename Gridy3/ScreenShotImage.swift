@@ -11,7 +11,7 @@ import UIKit
 
 extension UIView {
     
-    func captureScreen(onView: UIView) -> UIImage?
+    func captureScreen() -> UIImage?
       {
           
           UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
