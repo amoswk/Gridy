@@ -10,9 +10,12 @@ import Foundation
 import UIKit
 
 class PuzzleView: UIViewController {
+    //Variables for PuzzleView
     
     
-    let gameImage 
+    @IBOutlet weak var gameImage: UIImageView!
+    
+    self.gameImage = storedImage
     
     func startButton() {
     

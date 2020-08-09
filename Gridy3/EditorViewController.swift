@@ -282,7 +282,7 @@ class EditorViewController: UIViewController {
         
     
         //pass image array to next view controller
-        
+    
 
         
         //call segue (last)
