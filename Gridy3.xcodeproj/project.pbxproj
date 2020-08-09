@@ -22,6 +22,7 @@
 		B03EABBC2471B72800FD52D7 /* timeburnerbold.ttf in Resources */ = {isa = PBXBuildFile; fileRef = B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */; };
 		B04B33CD24BEBA0200CDEB94 /* PuzzleView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B33CC24BEBA0200CDEB94 /* PuzzleView.swift */; };
 		B04B33CF24D73B3500CDEB94 /* UIImage+ImageSlice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */; };
+		B04B33D124E05C2B00CDEB94 /* ScreenShotImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = B04B33D024E05C2B00CDEB94 /* ScreenShotImage.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,6 +64,7 @@
 		B03EABBA2471B72800FD52D7 /* timeburnerbold.ttf */ = {isa = PBXFileReference; lastKnownFileType = file; path = timeburnerbold.ttf; sourceTree = "<group>"; };
 		B04B33CC24BEBA0200CDEB94 /* PuzzleView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PuzzleView.swift; sourceTree = "<group>"; };
 		B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = "UIImage+ImageSlice.swift"; sourceTree = "<group>"; };
+		B04B33D024E05C2B00CDEB94 /* ScreenShotImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ScreenShotImage.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -117,6 +119,7 @@
 				B03EAB802471B58C00FD52D7 /* AppDelegate.swift */,
 				B03EABB02471B66200FD52D7 /* ViewController.swift */,
 				B03EABB22471B68500FD52D7 /* EditorViewController.swift */,
+				B04B33D024E05C2B00CDEB94 /* ScreenShotImage.swift */,
 				B04B33CE24D73B3500CDEB94 /* UIImage+ImageSlice.swift */,
 				B0188B6724B25BA6005AF449 /* GridView.swift */,
 				B03EAB822471B58C00FD52D7 /* SceneDelegate.swift */,
@@ -296,6 +299,7 @@
 				B03EAB812471B58C00FD52D7 /* AppDelegate.swift in Sources */,
 				B04B33CD24BEBA0200CDEB94 /* PuzzleView.swift in Sources */,
 				B03EAB832471B58C00FD52D7 /* SceneDelegate.swift in Sources */,
+				B04B33D124E05C2B00CDEB94 /* ScreenShotImage.swift in Sources */,
 				B0188B6824B25BA6005AF449 /* GridView.swift in Sources */,
 				B03EABB32471B68500FD52D7 /* EditorViewController.swift in Sources */,
 			);

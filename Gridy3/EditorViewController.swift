@@ -149,43 +149,9 @@ class EditorViewController: UIViewController {
         }
     }
     
-    
-    
-    
-    // Capture screenshot of image
-    
-    
-    
-    func captureScreen(onView: UIView) -> UIImage?
-    {
-        
-        UIGraphicsBeginImageContextWithOptions(self.imageWindow.bounds.size, false, 0);
-        
-        self.view.drawHierarchy(in: self.view.bounds, afterScreenUpdates: true)
-        
-        if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-            
-            UIGraphicsEndImageContext()
-            
-            //perform segue
-            
-             performSegue(withIdentifier: "showPuzzleView", sender: nil)
-            
-            
-            return image
-            
-        }
-        
-        
-        return nil
-        
-        
-    }
-    
+
     
   
-    
-
     
     override func viewDidLoad() {
         
@@ -297,7 +263,10 @@ class EditorViewController: UIViewController {
         self.grid?.removeFromSuperview()
         
         //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
-        captureScreen(onView: imageWindow)
+        //captureScreen(onView: imageWindow)
+        if let imageScreenShot = imageWindow?.captureScreen(onView: imageWindow) {
+            self.capturedImage = selectedImage
+        }
         
         //cut picture - find a display mode to show it was cropped correctly
         
@@ -305,13 +274,9 @@ class EditorViewController: UIViewController {
         if let storedImage = capturedImage?.imageSlice(into: 16) {
             self.storedImage = storedImage
             
+            
+             performSegue(withIdentifier: "showPuzzleView", sender: nil)
             }
-        
-        
-//        cropImage(<#T##inputImage: UIImage##UIImage#>, toRect: <#T##CGRect#>, viewWidth: <#T##CGFloat#>, viewHeight: <#T##CGFloat#>)
-      
-        
-        //store image array
     
         
         
@@ -321,6 +286,9 @@ class EditorViewController: UIViewController {
 
         
         //call segue (last)
+    
+    
+        
         
     }
     

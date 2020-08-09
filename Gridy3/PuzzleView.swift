@@ -11,12 +11,16 @@ import UIKit
 
 class PuzzleView: UIViewController {
     
+    
+    let gameImage 
+    
     func startButton() {
     
     
     
     
     }
+    
     
     
     
