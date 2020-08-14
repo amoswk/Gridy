@@ -267,22 +267,22 @@ class EditorViewController: UIViewController {
         //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
         //captureScreen(onView: imageWindow)
         if let imageScreenShot = imageWindow?.captureScreen() {
-            self.capturedImage = selectedImage
+            self.capturedImage = imageScreenShot
             
-             performSegue(withIdentifier: "showPuzzleView", sender: nil)
+            performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
         }
         
         //cut picture - find a display mode to show it was cropped correctly
         
     
-       // if let storedImage = capturedImage?.imageSlice(into: 16) {
-         //   self.storedImage = storedImage
+        if let storedImage = capturedImage?.imageSlice(into: 16) {
+            self.storedImage = storedImage
             
             
-          
+        //  performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
-       //     }
+            }
     
         
         

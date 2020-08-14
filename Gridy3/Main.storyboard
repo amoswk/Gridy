@@ -372,7 +372,7 @@
                     </view>
                     <navigationItem key="navigationItem" id="eLf-wh-qA8"/>
                     <connections>
-                        <outlet property="gameImage" destination="gYW-Pw-7X5" id="YM0-sY-ADq"/>
+                        <outlet property="gameImageView" destination="gYW-Pw-7X5" id="c4L-jW-TsM"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="Lf1-t5-BwZ" userLabel="First Responder" customClass="UIResponder" sceneMemberID="firstResponder"/>

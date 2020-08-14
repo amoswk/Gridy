@@ -14,6 +14,7 @@ class PuzzleView: UIViewController {
     
     
     
+
     @IBOutlet weak var gameImageView: UIImageView!
     var gameImage: UIImage?
     
