@@ -28,10 +28,11 @@ class EditorViewController: UIViewController {
     var capturedImage: UIImage?
     var storedImage: [UIImage] = []
     @IBOutlet weak var blurView: UIVisualEffectView!
-    @IBOutlet weak var imageWindow: UIView!
+    @IBOutlet weak var imageWindow: UIImageView!
     @IBOutlet weak var imageDisplay: UIImageView!
     @IBOutlet weak var startButton: UIView!
     @IBOutlet weak var gridView: UIImageView!
+   
     
  // FUNCTION to Cut Images
     
@@ -265,11 +266,22 @@ class EditorViewController: UIViewController {
         self.grid?.removeFromSuperview()
         
         //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
+             captureScreen(onView: imageWindow)
+              let capturedIImageView = UIImageView(frame: self.view.frame)
+              capturedIImageView.image = capturedImage
+              self.view.addSubview(capturedIImageView)
+        
+        
+        
+        
         //captureScreen(onView: imageWindow)
-        if let imageScreenShot = imageWindow?.captureScreen() {
+        if let imageScreenShot = imageWindow?.captureScreen(onView: imageWindow) {
             self.capturedImage = imageScreenShot
+     
+//
+//            performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
-            performSegue(withIdentifier: "showPuzzleView", sender: nil)
+           
             
         }
         
@@ -293,10 +305,11 @@ class EditorViewController: UIViewController {
         
         //call segue (last)
     
-    
-        
-        
+
+       
+
     }
     
-}
 
+
+}
