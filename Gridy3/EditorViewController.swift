@@ -258,7 +258,31 @@ class EditorViewController: UIViewController {
     
     
     
-    
+//    func captureScreen(onView: UIView) -> UIImage?
+//        {
+//
+//            UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
+//
+//          self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
+//
+//            if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+//
+//                UIGraphicsEndImageContext()
+//
+//                //perform segue
+//
+//                // performSegue(withIdentifier: "showPuzzleView", sender: nil)
+//
+//
+//                return image
+//
+//            }
+//
+//
+//            return nil
+//
+//
+//        }
     
     
     
@@ -266,16 +290,22 @@ class EditorViewController: UIViewController {
         self.grid?.removeFromSuperview()
         
         //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
-             captureScreen(onView: imageWindow)
+           //  captureScreen(onView: imageWindow)
+            
+              let testImage = imageWindow.captureScreen()
               let capturedIImageView = UIImageView(frame: self.view.frame)
-              capturedIImageView.image = capturedImage
+              capturedIImageView.image = testImage
               self.view.addSubview(capturedIImageView)
+              self.view.bringSubviewToFront(capturedIImageView)
+              self.view.setNeedsDisplay()
+        
+              
         
         
         
         
         //captureScreen(onView: imageWindow)
-        if let imageScreenShot = imageWindow?.captureScreen(onView: imageWindow) {
+        if let imageScreenShot = imageWindow?.captureScreen() {
             self.capturedImage = imageScreenShot
      
 //
