@@ -9,35 +9,33 @@
 import Foundation
 import UIKit
 
+
+
 extension UIView {
     
-    func captureScreen() -> UIImage?
-      {
-          
-          UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
-          
-        self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-          
-          if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-              
-              UIGraphicsEndImageContext()
-              
-              //perform segue
-              
-              // performSegue(withIdentifier: "showPuzzleView", sender: nil)
-              
-              
-              return image
-              
-          }
-          
-          
-          return nil
-          
-          
-      }
-    
-    
-    
+    func takeScreenshot(rect: CGRect) -> UIImage {
+        
+        //begin
+        UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
+        
+        // draw view in that context.
+        drawHierarchy(in: rect, afterScreenUpdates: true)
+        
+        // get image
+        let image = UIGraphicsGetImageFromCurrentImageContext()
+        UIGraphicsEndImageContext()
+        
+        if image != nil {
+            return image!
+        }
+        
+        return UIImage()
+        
+    }
     
 }
+
+
+
+
+

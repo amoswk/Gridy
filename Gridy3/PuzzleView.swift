@@ -9,6 +9,12 @@
 import Foundation
 import UIKit
 
+
+
+
+
+var image: UIImage = UIImage()
+
 class PuzzleView: UIViewController {
     //Variables for PuzzleView
     
@@ -20,8 +26,7 @@ class PuzzleView: UIViewController {
     
     // self.gameImage = storedImage
     
- 
-    
+
     
     
     
@@ -40,7 +45,7 @@ class PuzzleView: UIViewController {
         override func viewDidLoad() {
             super.viewDidLoad()
             
-            gameImageView.image = gameImage
+        gameImageView.image = image
             
             
             

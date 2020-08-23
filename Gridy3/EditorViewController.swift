@@ -292,28 +292,41 @@ class EditorViewController: UIViewController {
         //call screenshot function - try to make an extension for captureScreen, self.capturedImage = imageWindow
            //  captureScreen(onView: imageWindow)
             
-              let testImage = imageWindow.captureScreen()
-              let capturedIImageView = UIImageView(frame: self.view.frame)
-              capturedIImageView.image = testImage
-              self.view.addSubview(capturedIImageView)
-              self.view.bringSubviewToFront(capturedIImageView)
-              self.view.setNeedsDisplay()
+//           self.capturedImage = imageWindow.captureScreen()
+//              let capturedIImageView = UIImageView(frame: self.view.frame)
+//        capturedIImageView.image = self.capturedImage
+//        let image = capturedImage
+        
+        let convertedRect = imageWindow.convert(imageWindow.frame, to: self.view)
+        
+        let screenShot = self.view.takeScreenshot(rect: convertedRect)
+        image = screenShot
+        
+        
+        
+        
+        
+//              self.view.addSubview(capturedIImageView)
+//              self.view.bringSubviewToFront(capturedIImageView)
+//              self.view.setNeedsDisplay()
+//
+      
         
               
-        
+        //DISPLAY Screenshot 8/19
         
         
         
         //captureScreen(onView: imageWindow)
-        if let imageScreenShot = imageWindow?.captureScreen() {
-            self.capturedImage = imageScreenShot
+//        if let imageScreenShot = imageWindow?.captureScreen() {
+//            self.capturedImage = imageScreenShot
      
 //
-//            performSegue(withIdentifier: "showPuzzleView", sender: nil)
+            performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
            
             
-        }
+     
         
         //cut picture - find a display mode to show it was cropped correctly
         
