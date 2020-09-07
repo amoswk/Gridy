@@ -19,7 +19,7 @@ extension UIView {
         UIGraphicsBeginImageContextWithOptions(rect.size, false, UIScreen.main.scale)
         
         // draw view in that context.
-        drawHierarchy(in: rect, afterScreenUpdates: true)
+        self.drawHierarchy(in: rect, afterScreenUpdates: true)
         
         // get image
         let image = UIGraphicsGetImageFromCurrentImageContext()

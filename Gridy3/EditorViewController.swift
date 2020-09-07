@@ -258,31 +258,33 @@ class EditorViewController: UIViewController {
     
     
     
-//    func captureScreen(onView: UIView) -> UIImage?
-//        {
-//
-//            UIGraphicsBeginImageContextWithOptions(self.bounds.size, false, 0);
-//
-//          self.drawHierarchy(in: self.bounds, afterScreenUpdates: true)
-//
-//            if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
-//
-//                UIGraphicsEndImageContext()
-//
-//                //perform segue
-//
-//                // performSegue(withIdentifier: "showPuzzleView", sender: nil)
-//
-//
-//                return image
-//
-//            }
-//
-//
-//            return nil
-//
-//
-//        }
+    func captureScreen(onView: UIView) -> UIImage?
+        {
+            
+             let convertedRect = imageWindow.convert(imageWindow.frame, to: self.view)
+            
+            UIGraphicsBeginImageContextWithOptions(imageWindow.frame.size, false, UIScreen.main.scale);
+
+            self.view.drawHierarchy(in: imageWindow.frame, afterScreenUpdates: true)
+
+            if let image: UIImage = UIGraphicsGetImageFromCurrentImageContext() {
+
+                UIGraphicsEndImageContext()
+
+                //perform segue
+
+                // performSegue(withIdentifier: "showPuzzleView", sender: nil)
+
+
+                return image
+
+            }
+
+
+            return nil
+
+
+        }
     
     
     
@@ -297,11 +299,14 @@ class EditorViewController: UIViewController {
 //        capturedIImageView.image = self.capturedImage
 //        let image = capturedImage
         
-        let convertedRect = imageWindow.convert(imageWindow.frame, to: self.view)
+
         
-        let screenShot = self.view.takeScreenshot(rect: convertedRect)
+        
+        if let screenShot = self.captureScreen(onView: self.imageWindow) {
         image = screenShot
+        UIImageWriteToSavedPhotosAlbum(screenShot, nil, nil, nil)
         
+        }
         // change the CGRect parameter to UIView for takeScreenshot. Within the takeScreenshot function add the converted Rect part
         
         
@@ -333,6 +338,7 @@ class EditorViewController: UIViewController {
         //cut picture - find a display mode to show it was cropped correctly
         
     
+        // 9/7 Test with POC ScreenShot code
         if let storedImage = capturedImage?.imageSlice(into: 16) {
             self.storedImage = storedImage
             
@@ -340,7 +346,8 @@ class EditorViewController: UIViewController {
         //  performSegue(withIdentifier: "showPuzzleView", sender: nil)
             
             }
-    
+        
+        
         
         
     

@@ -101,7 +101,7 @@
                                                 <rect key="frame" x="0.0" y="0.0" width="177" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="8z6-6f-k4J">
-                                                        <rect key="frame" x="32" y="-1" width="112" height="81"/>
+                                                        <rect key="frame" x="32" y="-16" width="112" height="81"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="#F3E9D2"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -120,7 +120,7 @@
                                                 <rect key="frame" x="177" y="0.0" width="131" height="50"/>
                                                 <subviews>
                                                     <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="leading" contentVerticalAlignment="top" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="I1s-Cg-RqM">
-                                                        <rect key="frame" x="0.0" y="0.0" width="112" height="81"/>
+                                                        <rect key="frame" x="-9" y="-16" width="112" height="81"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <color key="backgroundColor" name="#F3E9D2"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="26"/>
@@ -133,7 +133,7 @@
                                                         </connections>
                                                     </button>
                                                     <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Photo Library" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="Kdv-zL-V3p">
-                                                        <rect key="frame" x="9" y="60" width="94" height="21"/>
+                                                        <rect key="frame" x="-9" y="27.5" width="112" height="52"/>
                                                         <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                                         <fontDescription key="fontDescription" type="system" pointSize="15"/>
                                                         <nil key="textColor"/>
@@ -153,9 +153,8 @@
                                     <constraint firstItem="M9k-bX-6St" firstAttribute="top" secondItem="4Yd-rc-Q1I" secondAttribute="top" constant="301.5" id="PG9-J0-Tth"/>
                                 </constraints>
                             </stackView>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bW-XS-7ym">
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Camera" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="5bW-XS-7ym">
                                 <rect key="frame" x="58" y="441" width="75" height="17"/>
-                                <autoresizingMask key="autoresizingMask" flexibleMaxX="YES" flexibleMaxY="YES"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="17"/>
                                 <nil key="textColor"/>
                                 <nil key="highlightedColor"/>
@@ -164,9 +163,13 @@
                         <color key="backgroundColor" systemColor="systemBackgroundColor" cocoaTouchSystemColor="whiteColor"/>
                         <constraints>
                             <constraint firstItem="4Yd-rc-Q1I" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="33" id="2SQ-vU-Buk"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5bW-XS-7ym" secondAttribute="trailing" constant="187" id="E3o-YZ-QCR"/>
+                            <constraint firstItem="5bW-XS-7ym" firstAttribute="top" secondItem="4Yd-rc-Q1I" secondAttribute="bottom" constant="12.5" id="QsS-I2-M2g"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="5bW-XS-7ym" secondAttribute="bottom" constant="110" id="XBH-LL-nrq"/>
                             <constraint firstItem="4Yd-rc-Q1I" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="6" id="bla-g0-hMC"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="bottom" secondItem="4Yd-rc-Q1I" secondAttribute="bottom" constant="139.5" id="dJR-zK-GSd"/>
                             <constraint firstItem="4Yd-rc-Q1I" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="iMn-HY-gnJ"/>
+                            <constraint firstItem="5bW-XS-7ym" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="58" id="jQI-hI-NrG"/>
                         </constraints>
                         <viewLayoutGuide key="safeArea" id="6Tk-OE-BBY"/>
                     </view>
