@@ -302,6 +302,8 @@ class EditorViewController: UIViewController {
         let screenShot = self.view.takeScreenshot(rect: convertedRect)
         image = screenShot
         
+        // change the CGRect parameter to UIView for takeScreenshot. Within the takeScreenshot function add the converted Rect part
+        
         
         
         
