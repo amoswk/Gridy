@@ -15,10 +15,12 @@ import UIKit
 
 var image: UIImage = UIImage()
 
+
 class PuzzleView: UIViewController {
     //Variables for PuzzleView
     
     
+    @IBOutlet weak var collectionView: UICollectionView!
     
 
     @IBOutlet weak var gameImageView: UIImageView!
@@ -26,7 +28,21 @@ class PuzzleView: UIViewController {
     
     // self.gameImage = storedImage
     
+    func configureLaylout() -> UICollectionViewCompositionalLayout {
+        let itemSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(0.25), heightDimension: .fractionalHeight(0.25))
+        let item = NSCollectionLayoutItem(layoutSize: itemSize)
+        let groupSize = NSCollectionLayoutSize(widthDimension: .fractionalWidth(1.0), heightDimension: .fractionalHeight(1.0))
+        let group = NSCollectionLayoutGroup.horizontal(layoutSize: groupSize, subitems: [item])
+        let section = NSCollectionLayoutSection(group: group)
+        
+        
+        return UICollectionViewCompositionalLayout(section: section)
+        
+        
+        
 
+        
+    }
     
     
     
@@ -47,7 +63,7 @@ class PuzzleView: UIViewController {
             
         gameImageView.image = image
             
-            
+            collectionView.collectionViewLayout = configureLaylout()
             
             
             
